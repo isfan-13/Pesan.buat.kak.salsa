@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pesan untuk Kak Salsa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="postmark-decor" aria-hidden="true">
+    <span class="stamp-line"></span>
+    <span class="stamp-line"></span>
+    <span class="stamp-line"></span>
+  </div>
+
+  <header class="hero">
+    <p class="eyebrow">KOTAK SURAT &middot; UNTUK SATU ORANG</p>
+    <h1>Pesan untuk<br><span>Kak Salsa</span></h1>
+    <p class="lede">
+      Tulis satu pesan, satu perasaan, satu kenangan. Setiap kartu yang kamu kirim
+      akan tersimpan di sini dan bisa dibaca oleh Kak Salsa maupun teman-teman lain.
+    </p>
+  </header>
+
+  <main>
+    <section class="mail-form-section" aria-labelledby="form-title">
+      <div class="envelope-card">
+        <div class="envelope-flap" aria-hidden="true"></div>
+        <h2 id="form-title">Tulis Pesanmu</h2>
+
+        <form id="pesan-form" novalidate>
+          <label for="nama">Dari</label>
+          <input type="text" id="nama" name="nama" maxlength="40" placeholder="Nama kamu" autocomplete="off" required>
+
+          <label for="pesan">Pesan</label>
+          <textarea id="pesan" name="pesan" maxlength="500" rows="5" placeholder="Tulis pesan untuk Kak Salsa di sini..." required></textarea>
+          <div class="char-count"><span id="char-count">0</span>/500</div>
+
+          <button type="submit" id="submit-btn">
+            <span class="btn-label">Kirim Pesan</span>
+          </button>
+
+          <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="mail-list-section" aria-labelledby="list-title">
+      <div class="list-heading">
+        <h2 id="list-title">Yang Sudah Terkirim</h2>
+        <span class="count-badge" id="count-badge">0 pesan</span>
+      </div>
+
+      <div id="loading-state" class="loading-state">Membuka kotak surat...</div>
+      <div id="empty-state" class="empty-state" hidden>
+        Kotak surat masih kosong. Jadilah yang pertama menulis untuk Kak Salsa.
+      </div>
+
+      <div id="pesan-list" class="pesan-list" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Dibuat dengan hangat untuk Kak Salsa &middot; setiap pesan tersimpan otomatis</p>
+  </footer>
+
+  <!-- Firebase (v9 modular, dimuat lewat CDN) -->
+  <script type="module" src="firebase-config.js"></script>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
